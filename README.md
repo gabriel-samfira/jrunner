@@ -24,5 +24,16 @@ chkconfig --level 2345 rabbitmq-server on
 ## Setup
 
 ```shell
+adduser jobrunner
 python setup.py install
+cp init/* /etc/init/
+# we use sudo to switch user. upstart does not have a tty
+sed -i 's/^Defaults    requiretty/#Defaults    requiretty/g' /etc/sudoers
+mkdir /etc/jrunner/
+cp jrunner.ini /etc/jrunner/
+
+for i in jrunner-jobqueue jrunner-notify jrunner-web jrunner-worker
+do
+    start $i
+done
 ```
