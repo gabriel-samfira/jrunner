@@ -11,7 +11,7 @@ install_requires=[
     'oslo.config',
     'eventlet>=0.9.17',
     'iso8601>=0.1.4',
-    'redis>=2.0.0',
+    'redis>=2.6.0',
     'requests>=1.1.0'
 ],
 
