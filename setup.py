@@ -9,14 +9,24 @@ install_requires=[
     'amqp>=1.2.1',
     'netaddr>=0.7.5',
     'oslo.config',
-    'eventlet',
-    'iso8601',
-    'redis',
-    'requests'
+    'eventlet>=0.9.17',
+    'iso8601>=0.1.4',
+    'redis>=2.0.0',
+    'requests>=1.1.0'
 ],
 
 if sys.version_info < (2,7):
-    install_requires.append('importlib')
+    install_requires=[
+        'Flask>=0.9',
+        'amqp>=1.2.1',
+        'netaddr>=0.7.5',
+        'oslo.config',
+        'eventlet>=0.9.17',
+        'iso8601>=0.1.4',
+        'redis>=2.0.0',
+        'requests>=1.1.0',
+        'importlib>=1.0.2'
+    ],
 
 setup(
     name='jrunner',
