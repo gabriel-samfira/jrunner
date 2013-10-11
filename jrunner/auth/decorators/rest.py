@@ -8,12 +8,12 @@ except:
     yaml = False
 
 deserializer = {
-    'yaml': yaml.safe_load,
+    'yaml': yaml.safe_load if yaml else json.loads,
     'json': json.loads
 }
 
 serializer = {
-    'yaml': yaml.dump,
+    'yaml': yaml.dump if yaml else json.dumps,
     'json': json.dumps
 }
 
