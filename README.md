@@ -1,4 +1,4 @@
-jrunner
-=======
+junner
+======
 
-A distributed JobRunner using RabbitMQ
+A distributed job runner
