@@ -3,6 +3,7 @@ import os
 import jrunner.common.utils as util
 from oslo.config import cfg
 from jrunner.openstack.common import log as logging
+import json
 
 opts = [
     cfg.StrOpt(
@@ -51,10 +52,11 @@ class DoTask():
             if job_name not in jobs:
                 raise Exception("Job %s cannot be executed" % job_name)
             cmd = [jobs[job_name], ]
+            job_args = json.loads(job_args)
             if type(job_args) is list:
+                cmd.extend(job_args)
                 if msg.get('job_id'):
                     cmd.append(" %s" % msg['job_id'])
-                cmd.extend(job_args)
             if type(job_args) is dict:
                 if msg.get('job_id'):
                     cmd.append(" --job_id %s" % msg['job_id'])
