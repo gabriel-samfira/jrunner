@@ -27,7 +27,7 @@ app = flask.Flask(__name__)
 @app.route('/', methods=['POST', ])
 @rest.serialize
 @auth.login_required
-def index():
+def jobs():
     req = flask.request
     data = req.data
     obj = j.JobClass(req.user)
