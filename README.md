@@ -71,6 +71,7 @@ t = backend.Token.create(user=a, expires=deadline)
 import datetime
 
 t = backend.Token.create(user=a, max_uses=10)
+print t.token
 ```
 
 ## Creating jobs

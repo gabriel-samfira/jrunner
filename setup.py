@@ -36,7 +36,7 @@ setup(
     author_email='samfiragabriel@gmail.com',
     url = 'http://cloudbase.it/',
     packages= find_packages(),
-    scripts=['jrunner-controller.py', 'jrunner-notify.py', 'jrunner-web.py', 'jrunner-worker.py', 'jrunner-shell.py'],
+    scripts=['jrunner-jobqueue.py', 'jrunner-notify.py', 'jrunner-web.py', 'jrunner-worker.py', 'jrunner-shell.py'],
     classifiers=[
         'Environment :: OpenStack',
         'Intended Audience :: Information Technology',

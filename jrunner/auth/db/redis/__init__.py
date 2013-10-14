@@ -193,8 +193,13 @@ class Token(object):
             token_data = TokenValidator().load(tk)
         except:
             raise Exception("Invalid token")
-        if cls(token_data['user'], token).is_valid() is False:
+        token_class = cls(token_data['user'], token)
+        if token_class.is_valid() is False:
             raise ValueError("This token is invalid")
+        try:
+            token_class.use()
+        except Exception as err:
+            log.exception(err)
         return token_data['user']
 
     @classmethod
