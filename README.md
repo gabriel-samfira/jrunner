@@ -92,6 +92,7 @@ print t.token
             "job_name": "test_job"
         }
     ]
+}
 ```
 
 ### Authentication via user/pass
